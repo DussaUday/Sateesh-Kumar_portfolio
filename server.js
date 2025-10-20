@@ -11,7 +11,7 @@ import awardsRoutes from './routes/awards.js';
 import servicesRoutes from './routes/services.js';
 import aboutRoutes from './routes/about.js';
 import heroRoutes from './routes/hero.js';
-
+import signatureRoute from "./cloudinarySignature.js";
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -35,7 +35,7 @@ app.use('/api/awards', awardsRoutes);
 app.use('/api/services', servicesRoutes);
 app.use('/api/about', aboutRoutes);
 app.use('/api/hero', heroRoutes);
-
+app.use("/api/cloudinary", signatureRoute);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running!' });
